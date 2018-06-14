@@ -1,0 +1,11 @@
+﻿<h1>MyFirstAngular</h1>
+<div>
+    <ul>
+        <li *ngFor="let hero of heroes" (click)="onSelect(hero)" >
+            
+            <span>{{hero.name}}</span>
+        </li>
+    </ul>
+
+    <hero-detail [hero]="selectedHero"></hero-detail>
+</div>
