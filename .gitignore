@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PowerTeam.Service/bin/Debug/netcoreapp2.0
+/PowerTeam.Service/obj/Debug/netcoreapp2.0
+/PowerTeam.Service/obj/project.assets.json
+/PowerTeam.Service/obj/PowerTeam.Service.csproj.nuget.g.targets
+/PowerTeam.Service/obj/PowerTeam.Service.csproj.nuget.g.props
+/PowerTeam.Service/obj/PowerTeam.Service.csproj.nuget.cache
+/PowerTeam.Model/obj
+/PowerTeam.Model/bin/Debug/netcoreapp2.0
+/PowerTeam.Model/PowerTeam.Model.csproj.user
+/PowerTeam.DAL/obj
+/PowerTeam.DAL/bin/Debug/netcoreapp2.0
+/.vs/PowerTeam/v15
