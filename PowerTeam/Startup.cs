@@ -9,6 +9,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PowerTeam.DAL;
 using Microsoft.EntityFrameworkCore;
+using PowerTeam.Service.Interface;
+using PowerTeam.Service;
+using PowerTeam.DAL.Interface;
+using PowerTeam.DAL.Reponsitory;
 
 namespace PowerTeam
 {
@@ -26,7 +30,8 @@ namespace PowerTeam
         {
             services.AddMvc();
             services.AddDbContext<PTDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddSingleton<IDataContext, DataContext>();
+            services.AddSingleton<IDeliveryService, DeliveryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

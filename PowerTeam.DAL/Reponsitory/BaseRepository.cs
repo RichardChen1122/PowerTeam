@@ -20,24 +20,30 @@ namespace PowerTeam.DAL.Reponsitory
             _ptDbContext = ptDBContext;
             this.entiteSet = ptDBContext.Set<T>();
         }
-        public Task Delete(T entity)
+        public virtual async Task Delete(T entity)
         {
-            throw new NotImplementedException();
+            if (_ptDbContext.Entry(entity).State == EntityState.Detached)
+            {
+                entiteSet.Attach(entity);
+            }
+            dynamic obj = entiteSet.Remove(entity);
+            await this._ptDbContext.SaveChangesAsync();
         }
 
         public bool Exists(Guid primaryKey)
         {
-            throw new NotImplementedException();
+            return entiteSet.Find(primaryKey) == null ? false : true;
         }
 
         public IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return entiteSet.AsQueryable();
         }
 
-        public Task Insert(T entity)
+        public virtual async Task Insert(T entity)
         {
-            throw new NotImplementedException();
+            dynamic obj = entiteSet.Add(entity);
+            await this._ptDbContext.SaveChangesAsync();
         }
 
         public virtual async Task<T> Single(Guid primaryKey)
@@ -47,9 +53,11 @@ namespace PowerTeam.DAL.Reponsitory
             return dbResult;
         }
 
-        public Task Update(T entity)
+        public virtual async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            _ptDbContext.Entry(entity).State = EntityState.Modified;
+
+            await this._ptDbContext.SaveChangesAsync();
         }
     }
 }
