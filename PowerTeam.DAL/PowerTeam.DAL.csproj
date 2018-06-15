@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180511065303_CreatePTDB.cs" />
     <Compile Remove="PTDBContextFactory.cs" />
   </ItemGroup>
 

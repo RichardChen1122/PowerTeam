@@ -64,17 +64,17 @@ namespace PowerTeam.DAL.Migrations
                     b.ToTable("DeliveryShareditems");
                 });
 
-            modelBuilder.Entity("PowerTeam.Model.DeliveryUser", b =>
+            modelBuilder.Entity("PowerTeam.Model.DeliveryTag", b =>
                 {
                     b.Property<Guid>("DeliveryId");
 
-                    b.Property<Guid>("UserId");
+                    b.Property<Guid>("TagId");
 
-                    b.HasKey("DeliveryId", "UserId");
+                    b.HasKey("DeliveryId", "TagId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("TagId");
 
-                    b.ToTable("DeliveryUsers");
+                    b.ToTable("DeliveryTags");
                 });
 
             modelBuilder.Entity("PowerTeam.Model.Item", b =>
@@ -153,7 +153,7 @@ namespace PowerTeam.DAL.Migrations
                     b.ToTable("SharedItems");
                 });
 
-            modelBuilder.Entity("PowerTeam.Model.User", b =>
+            modelBuilder.Entity("PowerTeam.Model.Tag", b =>
                 {
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd();
@@ -174,7 +174,7 @@ namespace PowerTeam.DAL.Migrations
 
                     b.HasIndex("ItemGuid");
 
-                    b.ToTable("Users");
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("PowerTeam.Model.User", b =>
@@ -258,16 +258,16 @@ namespace PowerTeam.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("PowerTeam.Model.DeliveryUser", b =>
+            modelBuilder.Entity("PowerTeam.Model.DeliveryTag", b =>
                 {
                     b.HasOne("PowerTeam.Model.Delivery", "Delivery")
-                        .WithMany("DeliveryUsers")
+                        .WithMany("DeliveryTags")
                         .HasForeignKey("DeliveryId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("PowerTeam.Model.User", "User")
-                        .WithMany("DeliveryUsers")
-                        .HasForeignKey("UserId")
+                    b.HasOne("PowerTeam.Model.Tag", "Tag")
+                        .WithMany("DeliveryTags")
+                        .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -290,10 +290,10 @@ namespace PowerTeam.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("PowerTeam.Model.User", b =>
+            modelBuilder.Entity("PowerTeam.Model.Tag", b =>
                 {
                     b.HasOne("PowerTeam.Model.Item")
-                        .WithMany("Users")
+                        .WithMany("Tags")
                         .HasForeignKey("ItemGuid");
                 });
 
