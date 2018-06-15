@@ -22,7 +22,8 @@ namespace PowerTeam.Service
 
         public DataContext()
         {
-            _ptDbContext = new PTDBContext();
+            var facotry = new PTDBContextFactory();
+            _ptDbContext = facotry.CreateDbContext(new string[1]);
         }
         public IDeliveryRepository Delivery
         {

@@ -10,9 +10,9 @@ namespace PowerTeam.DAL
 {
     public class PTDBContext: DbContext
     {
-        //public PTDBContext(DbContextOptions<PTDBContext> options)
-        //: base(options)
-        //{ }
+        public PTDBContext(DbContextOptions<PTDBContext> options)
+        : base(options)
+        { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,12 +32,9 @@ namespace PowerTeam.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //base.OnModelCreating(modelBuilder);
-
             modelBuilder.Entity<DeliveryShareditem>().HasKey(sc => new { sc.DeliveryId, sc.SharedItemId });
             modelBuilder.Entity<DeliveryTag>().HasKey(dt => new { dt.DeliveryId, dt.TagId });
             modelBuilder.Entity<UserRole>().HasKey(ur => new { ur.RoleId, ur.UserId });
-
-
         }
     }
 }

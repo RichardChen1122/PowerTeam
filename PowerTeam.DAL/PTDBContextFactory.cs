@@ -12,7 +12,7 @@ namespace PowerTeam.DAL
         public PTDBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<PTDBContext>();
-            optionsBuilder.UseSqlServer("Server=tcp:testproviderserver.database.windows.net,1433;Initial Catalog=providertest;Persist Security Info=False;User ID=asplab;Password=Windows10!dfu;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            optionsBuilder.UseSqlServer("Server=webnetqasqlawp1;Initial Catalog=powerteam;Persist Security Info=False;User ID=sa;Password=ASP+Rocks4U;Connection Timeout=30;");
 
             return new PTDBContext(optionsBuilder.Options);
         }
