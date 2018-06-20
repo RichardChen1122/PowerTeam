@@ -53,11 +53,24 @@ namespace PowerTeam.DAL.Migrations
 
             modelBuilder.Entity("PowerTeam.Model.DeliveryShareditem", b =>
                 {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateTime");
+
                     b.Property<Guid>("DeliveryId");
 
                     b.Property<Guid>("SharedItemId");
 
-                    b.HasKey("DeliveryId", "SharedItemId");
+                    b.Property<string>("UpdateBy");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.HasKey("Guid");
+
+                    b.HasIndex("DeliveryId");
 
                     b.HasIndex("SharedItemId");
 
@@ -66,11 +79,24 @@ namespace PowerTeam.DAL.Migrations
 
             modelBuilder.Entity("PowerTeam.Model.DeliveryTag", b =>
                 {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateTime");
+
                     b.Property<Guid>("DeliveryId");
 
                     b.Property<Guid>("TagId");
 
-                    b.HasKey("DeliveryId", "TagId");
+                    b.Property<string>("UpdateBy");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.HasKey("Guid");
+
+                    b.HasIndex("DeliveryId");
 
                     b.HasIndex("TagId");
 
@@ -199,11 +225,24 @@ namespace PowerTeam.DAL.Migrations
 
             modelBuilder.Entity("PowerTeam.Model.UserRole", b =>
                 {
+                    b.Property<Guid>("Guid")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CreateBy");
+
+                    b.Property<DateTime>("CreateTime");
+
                     b.Property<Guid>("RoleId");
+
+                    b.Property<string>("UpdateBy");
+
+                    b.Property<DateTime>("UpdateTime");
 
                     b.Property<Guid>("UserId");
 
-                    b.HasKey("RoleId", "UserId");
+                    b.HasKey("Guid");
+
+                    b.HasIndex("RoleId");
 
                     b.HasIndex("UserId");
 
