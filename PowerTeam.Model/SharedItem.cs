@@ -14,6 +14,9 @@ namespace PowerTeam.Model
         [ForeignKey("User")]
         public User Owner { get; set; }
         public virtual IList<DeliveryShareditem> DeliverySharedItems { get; set; }
+        
+        public bool Active { get; set; }
+
     }
 
     public enum SharedItemType

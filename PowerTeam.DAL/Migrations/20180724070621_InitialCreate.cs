@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace PowerTeam.DAL.Migrations
 {
-    public partial class _20180620 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,12 @@ namespace PowerTeam.DAL.Migrations
                 table: "UserRoles",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
+
+            migrationBuilder.AddColumn<bool>(
+                name: "Active",
+                table: "SharedItems",
+                nullable: false,
+                defaultValue: false);
 
             migrationBuilder.AddColumn<Guid>(
                 name: "Guid",
@@ -180,6 +186,10 @@ namespace PowerTeam.DAL.Migrations
             migrationBuilder.DropColumn(
                 name: "UpdateTime",
                 table: "UserRoles");
+
+            migrationBuilder.DropColumn(
+                name: "Active",
+                table: "SharedItems");
 
             migrationBuilder.DropColumn(
                 name: "Guid",

@@ -158,6 +158,8 @@ namespace PowerTeam.DAL.Migrations
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Active");
+
                     b.Property<string>("CreateBy");
 
                     b.Property<DateTime>("CreateTime");

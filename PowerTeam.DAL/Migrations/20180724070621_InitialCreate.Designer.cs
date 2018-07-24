@@ -12,8 +12,8 @@ using System;
 namespace PowerTeam.DAL.Migrations
 {
     [DbContext(typeof(PTDBContext))]
-    [Migration("20180620090641_20180620")]
-    partial class _20180620
+    [Migration("20180724070621_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,6 +158,8 @@ namespace PowerTeam.DAL.Migrations
                 {
                     b.Property<Guid>("Guid")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Active");
 
                     b.Property<string>("CreateBy");
 

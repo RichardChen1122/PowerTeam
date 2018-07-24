@@ -8,6 +8,7 @@
     <Compile Remove="Migrations\20180511065303_CreatePTDB.cs" />
     <Compile Remove="Migrations\20180620085122_20180620.cs" />
     <Compile Remove="Migrations\20180620090408_20180620.cs" />
+    <Compile Remove="Migrations\20180702094523_JustForTest.cs" />
   </ItemGroup>
 
   <ItemGroup>
