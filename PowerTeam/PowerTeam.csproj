@@ -27,6 +27,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Resource\Theme\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\Resource\Theme\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\Resource\Theme\css\bootstrap.css.map" />
+    <None Include="wwwroot\Resource\Theme\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\Resource\Theme\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\Resource\Theme\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\Resource\Theme\js\bootstrap.js" />
+    <None Include="wwwroot\Resource\Theme\js\bootstrap.min.js" />
+    <None Include="wwwroot\Resource\Theme\js\npm.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PowerTeam.DAL\PowerTeam.DAL.csproj" />
     <ProjectReference Include="..\PowerTeam.Model\PowerTeam.Model.csproj" />
     <ProjectReference Include="..\PowerTeam.Service\PowerTeam.Service.csproj" />

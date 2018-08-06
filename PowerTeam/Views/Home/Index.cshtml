@@ -1,10 +1,29 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<app asp-prerender-module="ClientApp/dist/main-server" >Loading...</app>
+    <title>Dashboard for Delivery Management System</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/Resource/Theme/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
 
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
 @section scripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>
 }
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
