@@ -14,3 +14,13 @@
 /PowerTeam.DAL/obj
 /PowerTeam.DAL/bin/Debug/netcoreapp2.0
 /.vs/PowerTeam/v15
+/src/packages
+/src/PowerTeam.API/bin/Debug/netcoreapp2.0
+/src/PowerTeam.API/obj
+/src/PowerTeam.DAL/bin/Debug/netcoreapp2.0
+/src/PowerTeam.DAL/obj
+/src/PowerTeam.Model/obj
+/src/PowerTeam.Model/bin/Debug/netcoreapp2.0
+/src/PowerTeam.Service/obj
+/src/PowerTeam.Service/bin/Debug/netcoreapp2.0
+/src/.vs/PowerTeam/v15
